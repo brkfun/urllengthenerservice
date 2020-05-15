@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index');
+Route::post('/sendUrl', 'UrlController@send')->name('sendUrl');
+Route::get('/lengthener/{urlCode}','UrlController@decode')->name('len');
+Route::get('sessionFlusher',function (){
+    if(app()->environment() === 'development'){
+        session()->flush();
+        return response()->json('done');
+    }
+    abort(404);
+    return null;
 });
