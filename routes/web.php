@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
-Route::post('/sendUrl', 'UrlController@send')->name('sendUrl');
+Route::post('/', 'UrlController@send')->name('sendUrl');
 Route::get('/lengthener/{urlCode}','UrlController@decode')->name('len');
 Route::get('sessionFlusher',function (){
     if(app()->environment() === 'development'){
