@@ -18,6 +18,10 @@ class Url extends Model
 {
     use SoftDeletes;
 
+    protected $casts = [
+        'will_expires' => 'boolean',
+    ];
+
     protected $fillable = [
         'id',
         'md5',
