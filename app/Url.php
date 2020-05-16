@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string md5
  * @property integer clicks
  * @property boolean will_expires
+ * @property mixed id
  */
 class Url extends Model
 {
