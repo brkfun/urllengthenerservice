@@ -41,7 +41,7 @@ class UrlController extends Controller
         session()->push('links',$request->get('link'));
         $hash = generateMd5();
         $url = new Url();
-        $url->url = $request->get('link');
+        $url->url = htmlspecialchars($request->get('link'));
         $url->md5 = $hash;
         $url->clicks = 0;
         $url->will_expires = false;
